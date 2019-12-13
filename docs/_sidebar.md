@@ -11,6 +11,7 @@
   - [Spring_loud_Gateway入门介绍](/Spring/Spring_loud_Gateway入门介绍)
   - [Spring_Cloud_Gateway学习](/Spring/Spring_Cloud_Gateway学习)
   - [Spring学习](/Spring/Spring学习)
+  - [vue报表工具](/vue/vue报表工具)
   - [vue的demo项目](/vue/vue的demo项目)
   - [Vue基础语法](/vue/Vue基础语法)
   - [vue应用实例记录](/vue/vue应用实例记录)

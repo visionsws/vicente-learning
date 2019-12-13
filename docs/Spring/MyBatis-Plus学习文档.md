@@ -48,7 +48,7 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
 ```
 
-#### application.java配置@MapperScan
+#### application.java配置MapperScan
 
 ```java
 @SpringBootApplication
@@ -62,7 +62,7 @@ public class BdDemoApplication {
 }
 ```
 
-#### 代码生成器
+### 代码生成器
 
 ```java
 package cn.com.bluemoon.demo.generator;
@@ -168,8 +168,9 @@ public class CodeGenerator {
         focList.add(new FileOutConfig(templatePath) {
             @Override
             public String outputFile(TableInfo tableInfo) {
+                String moduleName = pc.getModuleName()==null?"":pc.getModuleName();
                 // 自定义输出文件名 ， 如果你 Entity 设置了前后缀、此处注意 xml 的名称会跟着发生变化！！
-                return projectPath + "/src/main/resources/mapper/" + pc.getModuleName()
+                return projectPath + "/src/main/resources/mapper/" + moduleName
                         + "/" + tableInfo.getEntityName() + "Mapper" + StringPool.DOT_XML;
             }
         });
@@ -221,7 +222,7 @@ public class CodeGenerator {
 
 ```
 
-#### 添加测试
+### 添加测试
 
 ```java
 
@@ -300,7 +301,7 @@ public class SampleTest {
 ```
 
 上面的分页其实是调用BaseMapper的selectPage方法，这样的分页返回的数据确实是分页后的数据，但在控制台打印的SQL语句上看到其实并没有真正的物理分页，而是通过缓存来获得全部数据中再进行的分页，这样对于大数据量操作时是不可取的，那么接下来就叙述一下，真正实现物理分页的方法。
-
+### 分页功能
 #### 分页插件
 
 新建一个**MybatisPlusConfig**配置类文件
